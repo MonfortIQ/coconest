@@ -31,13 +31,13 @@
   </div>
 
   <!-- Navigation -->
-  <header class="navbar navbar-expand-lg navbar-coconest">
+  <header class="navbar navbar-expand-xl navbar-coconest">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="index.html">
         <img src="assets/images/branding/logo.svg" alt="COCONEST Pure Coconut Living" width="176" height="44">
       </a>
 
-      <div class="d-flex align-items-center gap-2 d-lg-none">
+      <div class="d-flex align-items-center gap-2 d-xl-none">
         <button class="nav-icon-btn theme-toggle-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
         <button class="nav-icon-btn rtl-toggle-btn" aria-label="Toggle RTL"><span class="rtl-text">RTL</span></button>
         <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-label="Shopping Cart">
@@ -97,7 +97,7 @@
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
         </ul>
 
-        <div class="nav-actions d-none d-lg-flex">
+        <div class="nav-actions d-none d-xl-flex">
           <button class="nav-icon-btn" data-bs-toggle="modal" data-bs-target="#globalSearchModal" title="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
           <a href="products.html" class="nav-icon-btn" title="View Wishlist"><i class="fa-regular fa-heart"></i><span class="nav-badge wishlist-badge">0</span></a>
           <button class="nav-icon-btn" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" title="Cart"><i class="fa-solid fa-bag-shopping"></i><span class="nav-badge cart-badge">1</span></button>
@@ -129,7 +129,7 @@
         <!-- Gallery -->
         <div class="col-lg-6">
           <div class="position-relative mb-3">
-            <img id="mainProductDisplay" src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1200&q=85" alt="Extra Virgin Cold-Pressed Coconut Oil" class="rounded-4 w-100 object-fit-cover shadow-sm border" style="height: 480px;">
+            <img id="mainProductDisplay" src="assets/images/products/virgin-coconut-oil/coconest-vco-500ml.webp" alt="Extra Virgin Cold-Pressed Coconut Oil" class="rounded-4 w-100 object-fit-cover shadow-sm border" style="height: 480px;">
             <div class="product-badge-group">
               <span class="badge-organic">100% Raw Certified</span>
               <span class="badge-gold">Award Winner</span>
@@ -138,16 +138,16 @@
           <!-- Thumbnails -->
           <div class="row g-2">
             <div class="col-3">
-              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=300&q=80" class="rounded-3 border w-100 object-fit-cover cursor-pointer active-thumb" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
+              <img src="assets/images/products/virgin-coconut-oil/coconest-vco-500ml.webp" class="rounded-3 border w-100 object-fit-cover cursor-pointer active-thumb" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
             </div>
             <div class="col-3">
-              <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=300&q=80" class="rounded-3 border w-100 object-fit-cover" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
+              <img src="assets/images/products/virgin-coconut-oil/coconest-vco-1000ml.webp" class="rounded-3 border w-100 object-fit-cover" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
             </div>
             <div class="col-3">
-              <img src="https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=300&q=80" class="rounded-3 border w-100 object-fit-cover" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
+              <img src="assets/images/sourcing/coconest-sourcing-hero.webp" class="rounded-3 border w-100 object-fit-cover" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
             </div>
             <div class="col-3">
-              <img src="https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=300&q=80" class="rounded-3 border w-100 object-fit-cover" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
+              <img src="assets/images/products/desiccated-coconut/coconest-desiccated-1000g.webp" class="rounded-3 border w-100 object-fit-cover" style="height: 80px; cursor: pointer;" onclick="document.getElementById('mainProductDisplay').src=this.src;">
             </div>
           </div>
         </div>
@@ -190,7 +190,7 @@
               <button class="cart-qty-btn" onclick="let q = document.getElementById('productQty'); q.value = parseInt(q.value)+1;">+</button>
             </div>
 
-            <button class="btn btn-coconest btn-primary-coconest flex-grow-1" onclick="addToCart({id: 'vco-500', name: 'Extra Virgin Cold-Pressed Coconut Oil (500ml)', price: 18.50, image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=400&q=80'}, parseInt(document.getElementById('productQty').value));">
+            <button class="btn btn-coconest btn-primary-coconest flex-grow-1" onclick="addToCart({id: 'vco-500', name: 'Extra Virgin Cold-Pressed Coconut Oil (500ml)', price: 18.50, image: 'assets/images/products/virgin-coconut-oil/coconest-vco-500ml.webp'}, parseInt(document.getElementById('productQty').value));">
               <i class="fa-solid fa-bag-shopping"></i> Add to Cart
             </button>
 
@@ -338,7 +338,7 @@
           <div class="col-md-4">
             <div class="product-card">
               <div class="product-media">
-                <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80" alt="Raw Centrifuged Coconut Oil">
+                <img src="assets/images/products/virgin-coconut-oil/coconest-vco-1000ml.webp" alt="Raw Centrifuged Coconut Oil">
               </div>
               <div class="product-content">
                 <span class="product-category-sub">Virgin Coconut Oil</span>
@@ -354,7 +354,7 @@
           <div class="col-md-4">
             <div class="product-card">
               <div class="product-media">
-                <img src="https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=800&q=80" alt="Fine Desiccated Coconut">
+                <img src="assets/images/products/desiccated-coconut/coconest-desiccated-500g.webp" alt="Fine Desiccated Coconut">
               </div>
               <div class="product-content">
                 <span class="product-category-sub">Desiccated Coconut</span>
@@ -370,7 +370,7 @@
           <div class="col-md-4">
             <div class="product-card">
               <div class="product-media">
-                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80" alt="Toasted Coconut Chips">
+                <img src="assets/images/products/coconut-chips/coconest-chips-150g.webp" alt="Toasted Coconut Chips">
               </div>
               <div class="product-content">
                 <span class="product-category-sub">Coconut Chips</span>
