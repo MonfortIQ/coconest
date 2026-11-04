@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 60" width="240" height="60" fill="none">
+  <!-- Coconut / Palm emblem -->
+  <g transform="translate(4, 6)">
+    <!-- Outer delicate ring -->
+    <circle cx="24" cy="24" r="23" stroke="#C99B51" stroke-width="1.5" stroke-dasharray="2 3" opacity="0.6"/>
+    <circle cx="24" cy="24" r="20" fill="#285C43"/>
+    
+    <!-- Stylized Coconut Half with Pure Drop -->
+    <path d="M16 28 C16 34 20 38 25 38 C30 38 34 34 34 28 C34 22 25 15 25 15 C25 15 16 22 16 28 Z" fill="#FFF9ED" opacity="0.95"/>
+    <path d="M22 29 C22 32 23.5 34 25.5 34 C27.5 34 29 32 29 29 C29 26 25.5 21 25.5 21 C25.5 21 22 26 22 29 Z" fill="#C99B51"/>
+    
+    <!-- Palm fronds / organic leaf crown -->
+    <path d="M24 12 C21 9 16 10 13 13 C16 14 20 14 23 13.5 Z" fill="#E9D8B9"/>
+    <path d="M25 12 C28 9 33 10 36 13 C33 14 29 14 26 13.5 Z" fill="#E9D8B9"/>
+    <circle cx="25.5" cy="28.5" r="1.5" fill="#FFF9ED"/>
+  </g>
+
+  <!-- Brand Typography -->
+  <text x="64" y="32" font-family="'Cormorant Garamond', 'Playfair Display', Georgia, serif" font-size="25" font-weight="700" letter-spacing="4" fill="#173D2D" class="brand-text-main">COCONEST</text>
+  <text x="65" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="600" letter-spacing="3.2" fill="#C99B51" class="brand-text-sub">PURE COCONUT LIVING</text>
+</svg>

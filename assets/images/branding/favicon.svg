@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <circle cx="32" cy="32" r="30" fill="#285C43"/>
+  <circle cx="32" cy="32" r="28" stroke="#C99B51" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.7"/>
+  <!-- Coconut Half with Golden Oil Drop -->
+  <path d="M22 36 C22 43 27 48 33 48 C39 48 44 43 44 36 C44 29 33 19 33 19 C33 19 22 29 22 36 Z" fill="#FFF9ED"/>
+  <path d="M29 37 C29 41 31 43 33.5 43 C36 43 38 41 38 37 C38 33 33.5 27 33.5 27 C33.5 27 29 33 29 37 Z" fill="#C99B51"/>
+  <!-- Palm leaves on top -->
+  <path d="M32 15 C28 11 21 12 17 16 C21 17 27 17 31 16 Z" fill="#E9D8B9"/>
+  <path d="M33 15 C37 11 44 12 48 16 C44 17 38 17 34 16 Z" fill="#E9D8B9"/>
+  <circle cx="33.5" cy="36" r="2" fill="#FFF9ED"/>
+</svg>

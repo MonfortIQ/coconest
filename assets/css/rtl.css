@@ -1,0 +1,191 @@
+/* ===================================================================
+   COCONEST - RTL (Right-to-Left) Stylesheet
+   Full Arabic & Hebrew layout support
+   =================================================================== */
+
+html[dir="rtl"] body {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Typography & Lists */
+html[dir="rtl"] ul, 
+html[dir="rtl"] ol {
+  padding-left: 0;
+  padding-right: 1.4rem;
+}
+
+/* Navbar & Menus */
+html[dir="rtl"] .navbar-brand {
+  margin-right: 0 !important;
+  margin-left: 1.25rem !important;
+}
+
+@media (min-width: 1200px) {
+  html[dir="rtl"] .navbar-brand {
+    margin-left: 1.75rem !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  html[dir="rtl"] .navbar-brand {
+    margin-left: 2.25rem !important;
+  }
+}
+
+html[dir="rtl"] .nav-actions {
+  margin-left: 0 !important;
+  margin-right: 1rem !important;
+}
+
+html[dir="rtl"] .navbar-nav .nav-link.active::after {
+  left: 0.55rem;
+  right: 0.55rem;
+}
+
+@media (min-width: 1200px) {
+  html[dir="rtl"] .navbar-nav .nav-link.active::after {
+    left: 0.7rem;
+    right: 0.7rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  html[dir="rtl"] .navbar-nav .nav-link.active::after {
+    left: 0.85rem;
+    right: 0.85rem;
+  }
+}
+
+html[dir="rtl"] .dropdown-item {
+  text-align: right;
+  flex-direction: row;
+}
+
+html[dir="rtl"] .dropdown-item:hover {
+  transform: translateX(-4px);
+}
+
+html[dir="rtl"] .nav-badge {
+  right: auto;
+  left: -3px;
+}
+
+/* Home 1 Hero Floating Badge */
+html[dir="rtl"] .hero-float-badge {
+  left: auto;
+  right: -2rem;
+}
+
+/* Home 2 Hero Editorial Layout */
+html[dir="rtl"] .editorial-img-secondary {
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .editorial-stamp {
+  right: auto;
+  left: 8%;
+}
+
+/* Product Cards */
+html[dir="rtl"] .product-badge-group {
+  left: auto;
+  right: 1rem;
+}
+
+html[dir="rtl"] .product-price .old-price {
+  margin-left: 0;
+  margin-right: 0.4rem;
+}
+
+html[dir="rtl"] .category-card:hover .category-link-text {
+  transform: translateX(-4px);
+}
+
+/* Timeline Sourcing */
+html[dir="rtl"] .timeline-item.left {
+  text-align: left;
+}
+
+html[dir="rtl"] .timeline-item.right {
+  text-align: right;
+}
+
+html[dir="rtl"] .timeline-item.left .timeline-step-badge {
+  right: auto;
+  left: -22px;
+}
+
+html[dir="rtl"] .timeline-item.right .timeline-step-badge {
+  left: auto;
+  right: -22px;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .timeline-sourcing::before {
+    left: auto;
+    right: 24px;
+  }
+  html[dir="rtl"] .timeline-item {
+    padding-left: 0;
+    padding-right: 60px;
+    text-align: right !important;
+  }
+  html[dir="rtl"] .timeline-item.left .timeline-step-badge,
+  html[dir="rtl"] .timeline-item.right .timeline-step-badge {
+    left: auto;
+    right: 2px;
+  }
+}
+
+/* Service Card Icon */
+html[dir="rtl"] .service-icon-floating {
+  left: auto;
+  right: 1.5rem;
+}
+
+/* Blog Cards */
+html[dir="rtl"] .blog-category-tag {
+  left: auto;
+  right: 1rem;
+}
+
+/* Footer Section */
+html[dir="rtl"] .footer-coconest h5::after {
+  left: auto;
+  right: 0;
+}
+
+html[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+/* Cart Drawer */
+html[dir="rtl"] .offcanvas-end {
+  right: auto !important;
+  left: 0 !important;
+  transform: translateX(-100%) !important;
+}
+
+html[dir="rtl"] .offcanvas-end.show {
+  transform: none !important;
+}
+
+/* Direction Arrows */
+html[dir="rtl"] .fa-arrow-right,
+html[dir="rtl"] .fa-chevron-right,
+html[dir="rtl"] .fa-angle-right {
+  transform: rotate(180deg);
+}
+
+/* Feature Stat */
+html[dir="rtl"] .feature-card-stat {
+  right: auto;
+  left: 2rem;
+}
+
+/* Newsletter Input */
+html[dir="rtl"] .newsletter-input-group {
+  flex-direction: row-reverse;
+}
