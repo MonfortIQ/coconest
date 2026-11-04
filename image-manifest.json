@@ -1,6 +1,6 @@
 {
   "project": "COCONEST - Premium Coconut Products & Virgin Oil Shop",
-  "total_images": 65,
+  "total_images": 71,
   "target_resolution_standard": "4K Ultra-HD / Master Pro",
   "format": "WebP High-Fidelity",
   "images": [
@@ -783,6 +783,78 @@
       "image_purpose": "Atmospheric green palm leaf canopy background for newsletter",
       "file_size_bytes": 174794,
       "integration_status": "Integrated"
+    },
+    {
+      "page_name": "products.html",
+      "section_name": "Product 6 - Dark Cacao Coconut Chips",
+      "image_filename": "coconest-chips-cacao-150g.webp",
+      "image_path": "assets/images/products/coconut-chips/coconest-chips-cacao-150g.webp",
+      "original_generation_dimensions": "2400x2400",
+      "final_dimensions": "2400x2400",
+      "image_format": "WebP",
+      "image_purpose": "Dark cacao roasted organic coconut chips in artisan bowl",
+      "integration_status": "Integrated",
+      "file_size_bytes": 462036
+    },
+    {
+      "page_name": "products.html",
+      "section_name": "Product 7 - Pure Virgin Coconut Oil 250ml",
+      "image_filename": "coconest-vco-250ml.webp",
+      "image_path": "assets/images/products/virgin-coconut-oil/coconest-vco-250ml.webp",
+      "original_generation_dimensions": "2400x2400",
+      "final_dimensions": "2400x2400",
+      "image_format": "WebP",
+      "image_purpose": "Compact everyday 250ml virgin coconut oil bottle with botanical shadows",
+      "integration_status": "Integrated",
+      "file_size_bytes": 589206
+    },
+    {
+      "page_name": "products.html",
+      "section_name": "Product 8 - Lightly Salted Coconut Chips 120g",
+      "image_filename": "coconest-chips-salted-120g.webp",
+      "image_path": "assets/images/products/coconut-chips/coconest-chips-salted-120g.webp",
+      "original_generation_dimensions": "2400x2400",
+      "final_dimensions": "2400x2400",
+      "image_format": "WebP",
+      "image_purpose": "Lightly salted crispy coconut ribbons on warm backdrop",
+      "integration_status": "Integrated",
+      "file_size_bytes": 865420
+    },
+    {
+      "page_name": "services.html",
+      "section_name": "Service 7 - Ethical Coconut Sourcing",
+      "image_filename": "coconest-service-sourcing.webp",
+      "image_path": "assets/images/services/sourcing/coconest-service-sourcing.webp",
+      "original_generation_dimensions": "2400x1600",
+      "final_dimensions": "2400x1600",
+      "image_format": "WebP",
+      "image_purpose": "Ethical origin sourcing with Sri Lankan coconut farm and palm canopy",
+      "integration_status": "Integrated",
+      "file_size_bytes": 1805308
+    },
+    {
+      "page_name": "services.html",
+      "section_name": "Service 8 - Product Formulation & R&D",
+      "image_filename": "coconest-service-formulation.webp",
+      "image_path": "assets/images/services/formulation/coconest-service-formulation.webp",
+      "original_generation_dimensions": "2400x1600",
+      "final_dimensions": "2400x1600",
+      "image_format": "WebP",
+      "image_purpose": "Formulation & R&D laboratory for natural coconut wellness products",
+      "integration_status": "Integrated",
+      "file_size_bytes": 1029014
+    },
+    {
+      "page_name": "services.html",
+      "section_name": "Service 9 - Quality Assurance & Certification",
+      "image_filename": "coconest-service-quality.webp",
+      "image_path": "assets/images/services/quality/coconest-service-quality.webp",
+      "original_generation_dimensions": "2400x1600",
+      "final_dimensions": "2400x1600",
+      "image_format": "WebP",
+      "image_purpose": "Quality assurance and analytical testing for certified organic coconut batches",
+      "integration_status": "Integrated",
+      "file_size_bytes": 686418
     }
   ]
 }

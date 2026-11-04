@@ -117,7 +117,7 @@
           <li class="breadcrumb-item active" aria-current="page">Products Catalog</li>
         </ol>
       </nav>
-      <h1 class="display-4 font-serif fw-bold mb-2">Pure Organic Harvest</h1>
+      <h1 class="display-4 font-serif fw-bold mb-2">Explore the Goodness of Coconut.</h1>
       <p class="section-desc mx-auto">100% Certified Organic, cold-pressed virgin oils, unsweetened shreds, and crunchy artisan chips directly from Sri Lankan estates.</p>
     </div>
   </section>
@@ -147,17 +147,19 @@
 
         <!-- Sorting & View Switch -->
         <div class="col-md-6 col-lg-3 d-flex justify-content-lg-end align-items-center gap-2">
-          <select id="productSortSelect" class="form-select form-select-sm form-select-coconest" style="max-width: 170px;">
-            <option value="featured">Featured Harvest</option>
-            <option value="price-low">Price: Low to High</option>
-            <option value="price-high">Price: High to Low</option>
-            <option value="rating">Highest Rated</option>
-          </select>
-
-          <div class="btn-group btn-group-sm" role="group">
-            <button type="button" class="btn btn-outline-coconest active" id="viewGridBtn" title="Grid View"><i class="fa-solid fa-table-cells-large"></i></button>
-            <button type="button" class="btn btn-outline-coconest" id="viewListBtn" title="List View"><i class="fa-solid fa-list"></i></button>
+          <div class="product-sort-dropdown" id="productSortDropdown">
+            <button type="button" class="product-sort-trigger" aria-haspopup="listbox" aria-expanded="false">
+              <span>Featured Harvest</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+            <div class="product-sort-menu" role="listbox" aria-label="Sort products">
+              <button type="button" role="option" data-sort="featured" aria-selected="true">Featured Harvest</button>
+              <button type="button" role="option" data-sort="price-low" aria-selected="false">Price: Low to High</button>
+              <button type="button" role="option" data-sort="price-high" aria-selected="false">Price: High to Low</button>
+              <button type="button" role="option" data-sort="rating" aria-selected="false">Highest Rated</button>
+            </div>
           </div>
+
         </div>
       </div>
 
@@ -231,7 +233,7 @@
         <div class="col filterable-product" data-category="desiccated" data-name="Organic Fine Desiccated Coconut 500g" data-price="9.50" data-rating="4.8">
           <div class="product-card">
             <div class="product-media">
-              <img src="assets/images/products/desiccated-coconut/coconest-desiccated-500g.webp" alt="Organic Fine Desiccated Coconut 500g">
+              <img class="product-card-full-image" src="assets/images/products/Fine%20Desiccated%20Coconut%20%28500g%29.png" alt="Organic Fine Desiccated Coconut 500g">
               <div class="product-badge-group">
                 <span class="badge-organic">Non-GMO</span>
               </div>
@@ -262,7 +264,7 @@
         <div class="col filterable-product" data-category="desiccated" data-name="Toasted Medium Shred Organic Coconut 1kg" data-price="16.00" data-rating="4.9">
           <div class="product-card">
             <div class="product-media">
-              <img src="assets/images/products/desiccated-coconut/coconest-desiccated-1000g.webp" alt="Toasted Medium Shred Organic Coconut 1kg">
+              <img class="product-card-full-image" src="assets/images/products/Toasted%20Medium%20Shred%20Organic%20Coconut%20%281kg%29.png" alt="Toasted Medium Shred Organic Coconut 1kg">
               <div class="product-badge-group">
                 <span class="badge-gold">Golden Toasted</span>
               </div>
@@ -325,7 +327,7 @@
         <div class="col filterable-product" data-category="chips" data-name="Dark Cacao Glazed Coconut Chips 150g" data-price="7.00" data-rating="4.8">
           <div class="product-card">
             <div class="product-media">
-              <img src="assets/images/sourcing/coconest-sourcing-hero.webp" alt="Dark Cacao Glazed Coconut Chips 150g">
+              <img src="assets/images/products/coconut-chips/coconest-chips-cacao-150g.webp" alt="Dark Cacao Glazed Coconut Chips 150g">
               <div class="product-badge-group">
                 <span class="badge-organic">Raw Cacao</span>
               </div>
@@ -351,17 +353,71 @@
             </div>
           </div>
         </div>
+
+        <!-- Product 7 -->
+        <div class="col filterable-product" data-category="oil" data-name="Pure Virgin Coconut Oil 250ml" data-price="11.50" data-rating="4.9">
+          <div class="product-card">
+            <div class="product-media">
+              <img src="assets/images/products/virgin-coconut-oil/coconest-vco-250ml.webp" alt="Pure Virgin Coconut Oil 250ml">
+              <div class="product-badge-group"><span class="badge-organic">Small Batch</span><span class="badge-gold">Everyday Size</span></div>
+              <div class="product-actions">
+                <button class="btn-product-action btn-quick-view" data-product-id="vco-250" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+                <button class="btn-product-action btn-wishlist-toggle" data-product-id="vco-250" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="btn-product-action btn-add-to-cart" data-product-id="vco-250" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-sub">Virgin Coconut Oil</span>
+              <h4 class="product-name"><a href="product-oil-virgin.html">Pure Virgin Coconut Oil (250ml)</a></h4>
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count">(68 reviews)</span></div>
+              <div class="product-footer"><div class="product-price">$11.50 <span class="old-price">$14.00</span></div><button class="btn-add-cart-pill btn-add-to-cart" data-product-id="vco-250"><i class="fa-solid fa-plus"></i> Add to Cart</button></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="col filterable-product" data-category="chips" data-name="Lightly Salted Coconut Chips 120g" data-price="5.50" data-rating="4.7">
+          <div class="product-card">
+            <div class="product-media">
+              <img src="assets/images/products/coconut-chips/coconest-chips-salted-120g.webp" alt="Lightly Salted Coconut Chips 120g">
+              <div class="product-badge-group"><span class="badge-organic">Vegan</span><span class="badge-gold">Sea Salt</span></div>
+              <div class="product-actions">
+                <button class="btn-product-action btn-quick-view" data-product-id="chips-120" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+                <button class="btn-product-action btn-wishlist-toggle" data-product-id="chips-120" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="btn-product-action btn-add-to-cart" data-product-id="chips-120" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-sub">Coconut Chips</span>
+              <h4 class="product-name"><a href="product-chips-toasted.html">Lightly Salted Coconut Chips (120g)</a></h4>
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><span class="rating-count">(43 reviews)</span></div>
+              <div class="product-footer"><div class="product-price">$5.50 <span class="old-price">$7.00</span></div><button class="btn-add-cart-pill btn-add-to-cart" data-product-id="chips-120"><i class="fa-solid fa-plus"></i> Add to Cart</button></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 9 -->
+        <div class="col filterable-product" data-category="oil" data-name="Virgin Coconut Oil Bulk Drum 200L" data-price="1680.00" data-rating="5.0">
+          <div class="product-card">
+            <div class="product-media">
+              <img class="product-card-full-image" src="assets/images/products/Virgin%20Coconut%20Oil%20Bulk%20Drum%20%28200L%29.png" alt="Virgin Coconut Oil Bulk Drum 200L">
+              <div class="product-badge-group"><span class="badge-gold">B2B Supply</span><span class="badge-organic">Cold Centrifuged</span></div>
+              <div class="product-actions">
+                <button class="btn-product-action btn-quick-view" data-product-id="vco-bulk-drum" title="Quick View"><i class="fa-solid fa-eye"></i></button>
+                <button class="btn-product-action btn-wishlist-toggle" data-product-id="vco-bulk-drum" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+                <button class="btn-product-action btn-add-to-cart" data-product-id="vco-bulk-drum" title="Add to Cart"><i class="fa-solid fa-bag-shopping"></i></button>
+              </div>
+            </div>
+            <div class="product-content">
+              <span class="product-category-sub">Bulk Coconut Oil</span>
+              <h4 class="product-name"><a href="product-oil-centrifuge.html">Virgin Coconut Oil Bulk Drum (200L)</a></h4>
+              <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span class="rating-count">(21 reviews)</span></div>
+              <div class="product-footer"><div class="product-price">$1,680 <span class="old-price">$1,850</span></div><button class="btn-add-cart-pill btn-add-to-cart" data-product-id="vco-bulk-drum"><i class="fa-solid fa-plus"></i> Add to Cart</button></div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- Pagination -->
-      <nav class="mt-5" aria-label="Product navigation">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled"><a class="page-link" href="#"><i class="fa-solid fa-chevron-left"></i></a></li>
-          <li class="page-item active"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-chevron-right"></i></a></li>
-        </ul>
-      </nav>
     </div>
   </section>
 

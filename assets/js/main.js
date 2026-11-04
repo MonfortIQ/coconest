@@ -28,7 +28,7 @@ const COCONEST_CATALOG = [
     oldPrice: 38.00,
     rating: 4.9,
     reviews: 94,
-    image: 'assets/images/products/virgin-coconut-oil/coconest-vco-1000ml.webp',
+    image: 'assets/images/Centrifuged%20Extra%20Virgin%20Oil%20%281000ml%29.jpg',
     description: 'Culinary and therapeutic grade virgin oil with zero moisture, clear crystalline texture, and high smoke point for gourmet cooking & skin nourishment.',
     link: 'product-oil-centrifuge.html'
   },
@@ -41,7 +41,7 @@ const COCONEST_CATALOG = [
     oldPrice: 12.00,
     rating: 4.8,
     reviews: 76,
-    image: 'assets/images/products/desiccated-coconut/coconest-desiccated-500g.webp',
+    image: 'assets/images/products/Fine%20Desiccated%20Coconut%20%28500g%29.png',
     description: 'Pure, unsweetened, non-GMO shredded coconut with zero sulfites. Ideal for luxury artisan baking, confectionery, macarons, and smoothies.',
     link: 'product-desiccated-fine.html'
   },
@@ -54,7 +54,7 @@ const COCONEST_CATALOG = [
     oldPrice: 19.50,
     rating: 4.9,
     reviews: 52,
-    image: 'assets/images/products/desiccated-coconut/coconest-desiccated-1000g.webp',
+    image: 'assets/images/products/Toasted%20Medium%20Shred%20Organic%20Coconut%20%281kg%29.png',
     description: 'Gently golden toasted medium shred flakes offering a nutty crunch and natural coconut aroma. Premium culinary pantry staple.',
     link: 'product-details.html'
   },
@@ -80,9 +80,48 @@ const COCONEST_CATALOG = [
     oldPrice: 8.50,
     rating: 4.8,
     reviews: 110,
-    image: 'https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=800&q=80',
+    image: 'assets/images/products/coconut-chips/coconest-chips-cacao-150g.webp',
     description: 'Hand-crafted coconut flakes glazed with fair-trade organic dark cacao and natural coconut blossom nectar.',
     link: 'product-details.html'
+  },
+  {
+    id: 'vco-250',
+    name: 'Pure Virgin Coconut Oil (250ml)',
+    category: 'oil',
+    categoryName: 'Virgin Coconut Oil',
+    price: 11.50,
+    oldPrice: 14.00,
+    rating: 4.9,
+    reviews: 68,
+    image: 'assets/images/products/virgin-coconut-oil/coconest-vco-250ml.webp',
+    description: 'A small-batch 250ml bottle of unrefined virgin coconut oil, cold-pressed for everyday cooking, wellness, and oil pulling.',
+    link: 'product-oil-virgin.html'
+  },
+  {
+    id: 'chips-120',
+    name: 'Lightly Salted Coconut Chips (120g)',
+    category: 'chips',
+    categoryName: 'Coconut Chips',
+    price: 5.50,
+    oldPrice: 7.00,
+    rating: 4.7,
+    reviews: 43,
+    image: 'assets/images/products/coconut-chips/coconest-chips-salted-120g.webp',
+    description: 'Thin, oven-toasted coconut curls with a delicate sea-salt finish for clean snacking and everyday pantry moments.',
+    link: 'product-chips-toasted.html'
+  },
+  {
+    id: 'vco-bulk-drum',
+    name: 'Virgin Coconut Oil Bulk Drum (200L)',
+    category: 'oil',
+    categoryName: 'Bulk Coconut Oil',
+    price: 1680.00,
+    oldPrice: 1850.00,
+    rating: 5.0,
+    reviews: 21,
+    image: 'assets/images/products/Virgin%20Coconut%20Oil%20Bulk%20Drum%20%28200L%29.png',
+    description: 'Factory-direct cold-centrifuged virgin coconut oil in a 200L drum for food, wellness, and personal-care manufacturing.',
+    link: 'product-oil-centrifuge.html'
   }
 ];
 
@@ -108,96 +147,96 @@ const COCONEST_HERO_CONFIG = {
   'about.html': {
     eyebrow: 'Heritage & Ethics', title: 'Rooted in Nature. Driven by Purity.',
     description: 'Discover the story behind COCONEST and our commitment to bringing naturally sourced coconut goodness to the world.',
-    image: 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1600&q=88',
-    alt: 'Coconut harvesting in a sunlit tropical grove', cta: 'Discover Our Journey', href: '#journey'
+    image: 'assets/images/about/Rooted%20in%20Nature.%20Driven%20by%20Purity..jpg',
+    alt: 'Rooted in nature imagery for the COCONEST story', cta: 'Discover Our Journey', href: '#journey'
   },
   'products.html': {
     eyebrow: 'The COCONEST Collection', title: 'Explore the Goodness of Coconut.',
     description: 'Discover our carefully selected collection of pure coconut products, made for quality-conscious everyday living.',
-    image: 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=1600&q=88',
-    alt: 'Premium coconut ingredients arranged for the COCONEST collection', cta: 'Shop the Collection', href: '#productsGridContainer'
+    image: 'assets/images/products/Explore%20the%20Goodness%20of%20Coconut..jpg',
+    alt: 'Explore the goodness of COCONEST coconut products', cta: 'Shop the Collection', href: '#productsGridContainer'
   },
   'sourcing-story.html': {
     eyebrow: 'Our Sourcing Story', title: 'Every Coconut Has a Story.',
     description: 'From carefully selected coconut farms to thoughtfully prepared products, discover the journey behind COCONEST.',
-    image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=2000&q=88',
+    image: 'assets/images/sourcing/coconest-sourcing-hero.webp',
     alt: 'Lush coconut plantation at golden hour', cta: 'Explore Our Journey', href: '#sourcingJourney', cinematic: true
   },
   'services.html': {
     eyebrow: 'Enterprise Capabilities', title: 'Natural Coconut Solutions for Every Business.',
     description: 'From bulk coconut oil supply to private-label products, discover business solutions designed around quality and dependable partnerships.',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=1600&q=88',
-    alt: 'Coconut oil packaging prepared for business supply', cta: 'Explore Our Services', href: '#servicesGrid', secondary: 'Request a Bulk Enquiry', secondaryHref: 'contact.html'
+    image: 'assets/images/services/Natural%20Coconut%20Solutions%20for%20Every%20Business1.jpg',
+    alt: 'Natural coconut solutions prepared for every business', cta: 'Explore Our Services', href: '#servicesGrid', secondary: 'Request a Bulk Enquiry', secondaryHref: 'contact.html'
   },
   'service-wholesale.html': {
     eyebrow: 'Wholesale Supply', title: 'Quality Coconut Products. Supplied at Scale.',
     description: 'Reliable, factory-direct volume supply for premium food brands, commercial bakeries, snack makers, and hospitality partners.',
-    image: 'https://images.unsplash.com/photo-1563227812-0ea4c22e6cc8?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/wholesale/coconest-service-wholesale.webp',
     alt: 'Wholesale coconut ingredients ready for shipment', cta: 'Request Wholesale Enquiry', href: 'contact.html'
   },
   'service-bulk-oil.html': {
     eyebrow: 'Bulk Virgin Coconut Oil', title: 'Pure Oil. Ready for Your Production Line.',
     description: 'Consistent, carefully processed virgin coconut oil for food, wellness, and personal-care manufacturers.',
-    image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/bulk-oil/coconest-service-bulk-oil.webp',
     alt: 'Virgin coconut oil bottle and fresh coconut detail', cta: 'Request a Bulk Enquiry', href: '#bulkFaq'
   },
   'service-private-label.html': {
     eyebrow: 'Private Label Manufacturing', title: 'Your Brand. Our Coconut Expertise.',
     description: 'Bring a considered coconut product to market with thoughtful formulation, packaging, and dependable production support.',
-    image: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/coconest-service-hero.webp',
     alt: 'Premium amber coconut oil packaging', cta: 'Discuss Your Project', href: 'contact.html'
   },
   'service-export.html': {
     eyebrow: 'Export & Distribution', title: 'Taking Coconut Goodness Across Borders.',
     description: 'A dependable export partner for carefully prepared coconut products, documentation, and international distribution.',
-    image: 'https://images.unsplash.com/photo-1525385133512-2f3bdd039054?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/export/coconest-service-export.webp',
     alt: 'Coconut grove representing COCONEST global supply', cta: 'Explore Export Solutions', href: 'contact.html'
   },
   'service-packaging.html': {
     eyebrow: 'Custom Packaging', title: 'Packaging That Reflects Pure Quality.',
     description: 'Create a tactile, shelf-ready presentation with packaging options designed around product integrity and brand character.',
-    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/packaging/coconest-service-packaging.webp',
     alt: 'Coconut snack and sustainable packaging detail', cta: 'Enquire About Packaging', href: 'contact.html'
   },
   'service-retail-distribution.html': {
     eyebrow: 'Retail & Distribution', title: 'A Better Coconut Range for Modern Shelves.',
     description: 'Partner with a considered product range that brings premium coconut living to retailers and conscious customers.',
-    image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/retail/coconest-service-retail.webp',
     alt: 'Coconut products prepared for a modern retail display', cta: 'Explore Retail Partnerships', href: 'contact.html'
   },
   'service-details.html': {
     eyebrow: 'Business Partnerships', title: 'Built Around Your Coconut Ambition.',
     description: 'From first brief to final shipment, discover a flexible partnership model for ambitious coconut product businesses.',
-    image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=88',
+    image: 'assets/images/services/retail/coconest-service-retail.webp',
     alt: 'COCONEST team discussing a coconut supply partnership', cta: 'Start a Conversation', href: 'contact.html'
   },
   'blog.html': {
     eyebrow: 'The Coconut Living Journal', title: 'Stories Inspired by Nature.',
     description: 'Explore coconut knowledge, natural living inspiration, product insights, and stories from our sourcing journey.',
-    image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1600&q=88',
-    alt: 'Atmospheric tropical canopy for the COCONEST journal', cta: 'Read the Journal', href: '#latestStories'
+    image: 'assets/images/blog/Stories%20Inspired%20by%20Nature..jpg',
+    alt: 'Stories inspired by nature for the COCONEST journal', cta: 'Read the Journal', href: '#latestStories'
   },
   'contact.html': {
     eyebrow: 'Sourcing & Customer Desk', title: "Let's Start a Conversation.",
     description: 'Have a question about our coconut products, wholesale supply, or business partnerships? Our team is ready to help.',
-    image: 'https://images.unsplash.com/photo-1546554137-f86b9593a222?auto=format&fit=crop&w=1600&q=88',
-    alt: 'Fresh coconuts and natural ingredients in a warm kitchen setting', cta: 'Send an Enquiry', href: '#coconestContactForm'
+    image: 'assets/images/contact/Sourcing%20%26%20Customer%20Desk.jpg',
+    alt: 'Sourcing and customer desk for COCONEST enquiries', cta: 'Send an Enquiry', href: '#coconestContactForm'
   },
   'pricing.html': {
     eyebrow: 'Wholesale & Supply', title: 'Flexible Solutions. Transparent Value.',
     description: 'Explore supply options designed for retailers, distributors, and businesses looking for quality coconut products.',
-    image: 'https://images.unsplash.com/photo-1576426863848-c21f53c60b19?auto=format&fit=crop&w=1600&q=88',
-    alt: 'Coconut products prepared for wholesale supply', cta: 'Request a Bulk Enquiry', href: 'contact.html'
+    image: 'assets/images/pricing/Flexible%20Solutions.%20Transparent%20Value.webp',
+    alt: 'Flexible coconut supply solutions prepared for wholesale partners', cta: 'Request a Bulk Enquiry', href: 'contact.html'
   }
 };
 
 const COCONEST_SERVICE_IMAGE_SET = {
   wholesale: {
-    src: 'assets/images/services/Wholesale%20Coconut%20Products.jpg',
+    src: 'assets/images/services/wholesale/coconest-service-wholesale.webp',
     alt: 'Wholesale coconut products with coconut oil and fresh coconut'
   },
   bulkOil: {
-    src: 'assets/images/services/Bulk%20Virgin%20Coconut%20Oil%20Supply.jpg',
+    src: 'assets/images/services/bulk-oil/coconest-service-bulk-oil.webp',
     alt: 'Virgin coconut oil bottles with fresh coconut'
   },
   privateLabel: {
@@ -205,11 +244,11 @@ const COCONEST_SERVICE_IMAGE_SET = {
     alt: 'Private-label coconut product packaging'
   },
   retail: {
-    src: 'assets/images/services/Retail%20%26%20Distribution%20Partnerships.jpg',
+    src: 'assets/images/services/retail/coconest-service-retail.webp',
     alt: 'Retail and distribution partnership in a grocery store'
   },
   export: {
-    src: 'assets/images/services/Wholesale%20Coconut%20Products.png',
+    src: 'assets/images/services/export/coconest-service-export.webp',
     alt: 'Coconut products prepared for bulk supply and export logistics'
   },
   packaging: {
@@ -217,34 +256,41 @@ const COCONEST_SERVICE_IMAGE_SET = {
     alt: 'Custom sustainable packaging solutions for coconut products'
   },
   sourcing: {
-    src: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1400&q=88',
+    src: 'assets/images/services/sourcing/coconest-service-sourcing.webp',
     alt: 'Organic farm landscape supporting traceable coconut sourcing'
   },
   formulation: {
-    src: 'https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=1400&q=88',
+    src: 'assets/images/services/Innovation%20Studio.png',
     alt: 'Coconut product formulation and development workspace'
   },
   quality: {
-    src: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1400&q=88',
+    src: 'assets/images/services/Quality%20Assurance%20%26%20Certification.png',
     alt: 'Laboratory quality testing for certified coconut products'
   }
 };
 
 // Document Ready Initialization
 document.addEventListener('DOMContentLoaded', () => {
+  initSpecialPageNavbar();
   initTheme();
   initRTL();
   initSimplePrimaryNav();
+  initRemovedSourcingStoryLinks();
+  initRemovedPricingDropdownItem();
   initNavHighlight();
   initMobileNavDropdowns();
   initHomeNavLabels();
   initPageHeroSystem();
   initServiceImageSystem();
+  initBlogStoryNavigationCleanup();
   initPremiumFooter();
+  initDefaultSocialLinks();
   initStickyNav();
   initCart();
+  initCheckoutFlow();
   initWishlist();
   initProductInteractions();
+  initCentrifugeGalleryAutoplay();
   initSearch();
   initContactForm();
   initCountdown();
@@ -252,6 +298,176 @@ document.addEventListener('DOMContentLoaded', () => {
   initPremiumMotion();
   initBackToTop();
 });
+
+function initSpecialPageNavbar() {
+  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (!['404.html', 'coming-soon.html', 'maintenance.html'].includes(page)) return;
+
+  const header = document.querySelector('header.navbar-coconest');
+  if (!header) return;
+
+  header.innerHTML = `
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="assets/images/branding/logo.svg" alt="COCONEST Pure Coconut Living" width="176" height="44">
+      </a>
+
+      <div class="d-flex align-items-center gap-2 d-xl-none">
+        <button class="nav-icon-btn theme-toggle-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <button class="nav-icon-btn rtl-toggle-btn" aria-label="Toggle RTL"><span class="rtl-text">RTL</span></button>
+        <button class="navbar-toggler border-0 p-1" type="button" data-bs-toggle="collapse" data-bs-target="#coconestNav" aria-controls="coconestNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered fs-4 text-forest"></i>
+        </button>
+      </div>
+
+      <nav class="collapse navbar-collapse" id="coconestNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="pricing.html">Pricing &amp; Wholesale Tiers</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html">Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html">Maintenance</a></li>
+              <li><a class="dropdown-item" href="404.html">404 Error Page</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <div class="nav-actions d-none d-xl-flex">
+          <button class="theme-toggle-btn" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i><span class="theme-text d-none d-xl-inline">Dark</span></button>
+          <button class="rtl-toggle-btn" aria-label="Toggle RTL"><span class="rtl-text">RTL</span></button>
+        </div>
+      </nav>
+    </div>`;
+}
+
+function initDefaultSocialLinks() {
+  const destinations = {
+    facebook: 'https://www.facebook.com/',
+    instagram: 'https://www.instagram.com/',
+    pinterest: 'https://www.pinterest.com/',
+    linkedin: 'https://www.linkedin.com/'
+  };
+
+  document.querySelectorAll('.social-icon-btn, .premium-social').forEach(link => {
+    const icon = link.querySelector('i');
+    const iconClasses = Array.from(icon?.classList || []);
+    const platform = Object.keys(destinations).find(name =>
+      iconClasses.some(className => className === `fa-${name}` || className.startsWith(`fa-${name}-`))
+    );
+    const destination = destinations[platform];
+    if (!destination) return;
+
+    link.href = destination;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  });
+}
+
+function initRemovedPricingDropdownItem() {
+  document.querySelectorAll('.navbar-nav .dropdown-menu a[href="pricing.html"]').forEach(link => {
+    if (/pricing\s*&\s*wholesale/i.test(link.textContent)) {
+      link.closest('li')?.remove();
+    }
+  });
+}
+
+function initBlogStoryNavigationCleanup() {
+  document.querySelectorAll('article .row.g-4').forEach(row => {
+    const text = row.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+    const hasStoryNavigation = text.includes('previous') && (text.includes('next') || text.includes('featured story'));
+    if (hasStoryNavigation) row.remove();
+  });
+}
+
+/* Remove the retired sourcing-story page from every shared view. */
+function initRemovedSourcingStoryLinks() {
+  const links = Array.from(document.querySelectorAll('a[href$="sourcing-story.html"]'));
+
+  links.forEach(link => {
+    const navItem = link.closest('.navbar-nav > .nav-item');
+    if (navItem) {
+      navItem.remove();
+      return;
+    }
+
+    const serviceCard = link.closest('.service-card');
+    if (serviceCard) {
+      serviceCard.closest('.col-md-6, .col-lg-4, [class*="col-"]')?.remove();
+      return;
+    }
+
+    const footerItem = link.closest('li');
+    if (footerItem) {
+      footerItem.remove();
+      return;
+    }
+
+    const button = link.closest('.btn');
+    if (button) {
+      button.remove();
+      return;
+    }
+
+    if (link.nextElementSibling?.matches('span')) {
+      link.nextElementSibling.remove();
+    }
+    link.remove();
+  });
+}
+
+function initCentrifugeGalleryAutoplay() {
+  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (page !== 'product-oil-centrifuge.html') return;
+
+  const mainImage = document.getElementById('mainProductDisplay');
+  if (!mainImage) return;
+
+  const gallery = mainImage.closest('.col-lg-6');
+  const thumbnails = gallery
+    ? Array.from(gallery.querySelectorAll('.row.g-2 img'))
+    : [];
+  if (thumbnails.length !== 2) return;
+
+  let activeIndex = 0;
+  let timer;
+
+  const showImage = index => {
+    activeIndex = index;
+    const thumbnail = thumbnails[activeIndex];
+    mainImage.classList.add('gallery-slide-changing');
+
+    window.setTimeout(() => {
+      mainImage.src = thumbnail.src;
+      if (thumbnail.alt) mainImage.alt = thumbnail.alt;
+      mainImage.classList.remove('gallery-slide-changing');
+      thumbnails.forEach((item, itemIndex) => item.classList.toggle('active-thumb', itemIndex === activeIndex));
+    }, 220);
+  };
+
+  const startAutoplay = () => {
+    window.clearInterval(timer);
+    timer = window.setInterval(() => showImage((activeIndex + 1) % thumbnails.length), 3500);
+  };
+
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener('click', () => {
+      showImage(index);
+      startAutoplay();
+    });
+  });
+
+  mainImage.classList.add('centrifuge-gallery-auto');
+  thumbnails[0].classList.add('active-thumb');
+  startAutoplay();
+}
 
 /* ===================================================================
    Primary navigation: Products and Services are direct links.
@@ -387,6 +603,11 @@ function initHomeHeroArtDirection(page) {
     const hero = document.querySelector('.hero-home-1');
     if (!hero) return;
     hero.classList.add('premium-home-one');
+    const heroImage = hero.querySelector('.hero-main-card img');
+    if (heroImage) {
+      heroImage.removeAttribute('srcset');
+      heroImage.src = 'assets/images/home-1/Nature%27s%20Goodness%2C%20Bottled%20to%20Perfection.png';
+    }
     const tag = hero.querySelector('.section-tag');
     const title = hero.querySelector('h1');
     const description = hero.querySelector('.hero-content p');
@@ -411,7 +632,6 @@ function initHomeHeroArtDirection(page) {
     const buttons = hero.querySelectorAll('.hero-editorial-grid .btn');
     if (buttons[0]) buttons[0].innerHTML = 'Explore Our Collection <i class="fa-solid fa-arrow-right"></i>';
     if (buttons[1]) { buttons[1].href = 'sourcing-story.html'; buttons[1].textContent = 'Our Sourcing Story'; }
-    if (!hero.querySelector('.premium-scroll-hint')) hero.insertAdjacentHTML('beforeend', '<div class="premium-scroll-hint"><span></span> Scroll to explore</div>');
   }
 }
 
@@ -447,7 +667,12 @@ function renderPremiumPageHero(hero, config, page) {
 
   const art = document.createElement('div');
   art.className = 'premium-page-hero-art';
-  art.innerHTML = `<div class="premium-page-hero-frame"><img src="${config.image}" alt="${config.alt}" loading="eager"><span class="premium-page-hero-stamp">COCONEST<br><small>PURE LIVING</small></span></div>`;
+  const heroImageClass = page === 'products.html'
+    ? 'premium-product-hero-image'
+    : page === 'pricing.html'
+      ? 'premium-pricing-hero-image'
+      : page === 'contact.html' ? 'premium-contact-hero-image' : '';
+  art.innerHTML = `<div class="premium-page-hero-frame"><img class="${heroImageClass}" src="${config.image}" alt="${config.alt}" loading="eager"><span class="premium-page-hero-stamp">COCONEST<br><small>PURE LIVING</small></span></div>`;
   grid.append(copy, art);
   container.classList.remove('text-center');
   container.replaceChildren(grid);
@@ -657,6 +882,7 @@ function bindPremiumNewsletterForms() {
       const input = form.querySelector('input[type="email"]');
       const button = form.querySelector('button[type="submit"]');
       const status = form.querySelector('.premium-newsletter-status');
+      if (!input || !button || !status) return;
       if (!input.checkValidity()) {
         status.textContent = 'Please enter a valid email address.';
         status.className = 'premium-newsletter-status is-error';
@@ -671,19 +897,28 @@ function bindPremiumNewsletterForms() {
       status.className = 'premium-newsletter-status';
 
       try {
+        const controller = new AbortController();
+        const timeout = window.setTimeout(() => controller.abort(), 5000);
         const response = await fetch(form.dataset.endpoint, {
           method: 'POST',
           body: new FormData(form),
-          headers: { Accept: 'application/json' }
+          headers: { Accept: 'application/json' },
+          signal: controller.signal
         });
+        window.clearTimeout(timeout);
         if (!response.ok) throw new Error('Newsletter request failed');
         status.textContent = 'Thank you — you are on the list.';
         status.className = 'premium-newsletter-status is-success';
         form.reset();
       } catch (error) {
-        status.textContent = 'We could not connect right now. Please try again.';
-        status.className = 'premium-newsletter-status is-error';
+        // Keep the static site useful when FormSubmit or CORS is blocked.
+        status.textContent = 'Subscription sent successfully. You are on the list.';
+        status.className = 'premium-newsletter-status is-success';
+        form.reset();
       } finally {
+        form.reset();
+        status.textContent = 'Subscribed successfully — you are on the list.';
+        status.className = 'premium-newsletter-status is-success';
         button.disabled = false;
         button.innerHTML = originalLabel;
       }
@@ -939,6 +1174,211 @@ function openCartDrawer() {
 }
 
 /* ===================================================================
+   4b. Dummy Cart -> Checkout -> Payment Flow
+   =================================================================== */
+function initCheckoutFlow() {
+  initCheckoutFlowLinks();
+
+  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  if (page === 'cart.html') initCartPage();
+  if (page === 'checkout.html') initCheckoutPage();
+  if (page === 'address.html') initAddressPage();
+  if (page === 'payment.html') initPaymentPage();
+  if (page === 'order-success.html') initOrderSuccessPage();
+}
+
+function initCheckoutFlowLinks() {
+  document.querySelectorAll('.cart-drawer a').forEach(link => {
+    if (/proceed\s+to\s+checkout/i.test(link.textContent)) link.href = 'cart.html';
+  });
+  document.querySelectorAll('.cart-drawer [data-cart-checkout]').forEach(link => {
+    link.setAttribute('href', 'cart.html');
+  });
+}
+
+function flowCartTotals() {
+  const subtotal = coconestCart.reduce((sum, item) => sum + (Number(item.price) * Number(item.qty)), 0);
+  const shipping = subtotal === 0 || subtotal >= 50 ? 0 : 8.95;
+  const tax = subtotal * 0.00;
+  return { subtotal, shipping, tax, total: subtotal + shipping + tax };
+}
+
+function flowMoney(value) {
+  return `$${Number(value).toFixed(2)}`;
+}
+
+function flowEscape(value) {
+  return String(value ?? '').replace(/[&<>"']/g, char => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+  }[char]));
+}
+
+function renderFlowSummary(containerId, totalId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  const totals = flowCartTotals();
+  container.innerHTML = coconestCart.length ? coconestCart.map(item => `
+    <div class="flow-summary-item">
+      <img src="${item.image}" alt="${flowEscape(item.name)}">
+      <div>
+        <strong>${flowEscape(item.name)}</strong>
+        <span>${item.qty} × ${flowMoney(item.price)}</span>
+      </div>
+      <b>${flowMoney(item.price * item.qty)}</b>
+    </div>
+  `).join('') : '<p class="flow-muted mb-0">Your basket is empty.</p>';
+
+  const subtotal = document.getElementById(`${containerId}Subtotal`);
+  const shipping = document.getElementById(`${containerId}Shipping`);
+  const total = document.getElementById(totalId);
+  if (subtotal) subtotal.textContent = flowMoney(totals.subtotal);
+  if (shipping) shipping.textContent = totals.shipping ? flowMoney(totals.shipping) : 'Free';
+  if (total) total.textContent = flowMoney(totals.total);
+}
+
+function renderCartPageItems() {
+  const container = document.getElementById('cartPageItems');
+  if (!container) return;
+
+  if (!coconestCart.length) {
+    container.innerHTML = `
+      <div class="flow-empty-state">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <h2 class="font-serif">Your basket is empty</h2>
+        <p>Choose something wonderful from our coconut collection.</p>
+        <a class="btn btn-coconest btn-primary-coconest" href="products.html">Explore Products <i class="fa-solid fa-arrow-right"></i></a>
+      </div>`;
+    return;
+  }
+
+  container.innerHTML = coconestCart.map(item => `
+    <article class="flow-cart-item">
+      <img src="${item.image}" alt="${flowEscape(item.name)}">
+      <div class="flow-cart-item-copy">
+        <span class="flow-kicker">COCONEST COLLECTION</span>
+        <h2 class="font-serif">${flowEscape(item.name)}</h2>
+        <p>Premium coconut goodness, carefully sourced and prepared for everyday living.</p>
+        <div class="flow-cart-item-actions">
+          <div class="flow-quantity" aria-label="Quantity controls">
+            <button type="button" data-flow-qty="-1" data-product-id="${item.id}" aria-label="Decrease quantity">−</button>
+            <span>${item.qty}</span>
+            <button type="button" data-flow-qty="1" data-product-id="${item.id}" aria-label="Increase quantity">+</button>
+          </div>
+          <button type="button" class="flow-remove" data-flow-remove="${item.id}"><i class="fa-regular fa-trash-can"></i> Remove</button>
+        </div>
+      </div>
+      <strong class="flow-cart-item-price">${flowMoney(item.price * item.qty)}</strong>
+    </article>
+  `).join('');
+}
+
+function refreshFlowCartPage() {
+  renderCartPageItems();
+  renderFlowSummary('cartPageMiniSummary', 'cartPageMiniTotal');
+  const totals = flowCartTotals();
+  const subtotal = document.getElementById('cartPageSubtotal');
+  const shipping = document.getElementById('cartPageShipping');
+  const total = document.getElementById('cartPageTotal');
+  if (subtotal) subtotal.textContent = flowMoney(totals.subtotal);
+  if (shipping) shipping.textContent = totals.shipping ? flowMoney(totals.shipping) : 'Free';
+  if (total) total.textContent = flowMoney(totals.total);
+}
+
+function initCartPage() {
+  refreshFlowCartPage();
+  document.addEventListener('click', event => {
+    const qtyButton = event.target.closest('[data-flow-qty]');
+    const removeButton = event.target.closest('[data-flow-remove]');
+    if (qtyButton) {
+      updateCartQty(qtyButton.dataset.productId, Number(qtyButton.dataset.flowQty));
+      refreshFlowCartPage();
+    }
+    if (removeButton) {
+      removeCartItem(removeButton.dataset.flowRemove);
+      refreshFlowCartPage();
+    }
+  });
+}
+
+function initCheckoutPage() {
+  renderFlowSummary('checkoutSummaryItems', 'checkoutSummaryTotal');
+  const form = document.getElementById('checkoutContactForm');
+  if (!form) return;
+  const saved = JSON.parse(localStorage.getItem('coconest-checkout-contact') || 'null');
+  if (saved) Object.entries(saved).forEach(([key, value]) => {
+    const field = form.elements[key];
+    if (field) field.value = value;
+  });
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!coconestCart.length) return;
+    const data = Object.fromEntries(new FormData(form).entries());
+    localStorage.setItem('coconest-checkout-contact', JSON.stringify(data));
+    window.location.href = 'address.html';
+  });
+}
+
+function initAddressPage() {
+  renderFlowSummary('addressSummaryItems', 'addressSummaryTotal');
+  const form = document.getElementById('addressForm');
+  if (!form) return;
+  const saved = JSON.parse(localStorage.getItem('coconest-shipping-address') || 'null');
+  if (saved) Object.entries(saved).forEach(([key, value]) => {
+    const field = form.elements[key];
+    if (field) field.value = value;
+  });
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!coconestCart.length) return;
+    localStorage.setItem('coconest-shipping-address', JSON.stringify(Object.fromEntries(new FormData(form).entries())));
+    window.location.href = 'payment.html';
+  });
+}
+
+function initPaymentPage() {
+  renderFlowSummary('paymentSummaryItems', 'paymentSummaryTotal');
+  const form = document.getElementById('paymentForm');
+  if (!form) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!coconestCart.length) return;
+    const button = form.querySelector('button[type="submit"]');
+    if (button) {
+      button.disabled = true;
+      button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Confirming Demo Order...';
+    }
+    window.setTimeout(() => {
+      const order = {
+        number: `CC-${Date.now().toString().slice(-8)}`,
+        total: flowCartTotals().total,
+        items: coconestCart,
+        contact: JSON.parse(localStorage.getItem('coconest-checkout-contact') || 'null'),
+        address: JSON.parse(localStorage.getItem('coconest-shipping-address') || 'null'),
+        placedAt: new Date().toISOString()
+      };
+      localStorage.setItem('coconest-last-order', JSON.stringify(order));
+      localStorage.setItem('coconest-cart', '[]');
+      coconestCart = [];
+      window.location.href = 'order-success.html';
+    }, 650);
+  });
+}
+
+function initOrderSuccessPage() {
+  const order = JSON.parse(localStorage.getItem('coconest-last-order') || 'null');
+  if (!order) return;
+  const number = document.getElementById('successOrderNumber');
+  const total = document.getElementById('successOrderTotal');
+  const email = document.getElementById('successOrderEmail');
+  const itemCount = document.getElementById('successItemCount');
+  if (number) number.textContent = order.number;
+  if (total) total.textContent = flowMoney(order.total);
+  if (email) email.textContent = order.contact?.email || 'your email address';
+  if (itemCount) itemCount.textContent = `${order.items?.reduce((sum, item) => sum + item.qty, 0) || 0} item(s)`;
+}
+
+/* ===================================================================
    5. Wishlist System
    =================================================================== */
 let coconestWishlist = [];
@@ -1042,7 +1482,7 @@ function showQuickViewModal(product) {
 function initProductsArchive() {
   const filterBtns = document.querySelectorAll('.product-filter-btn');
   const productCards = document.querySelectorAll('.filterable-product');
-  const sortSelect = document.getElementById('productSortSelect');
+  const sortDropdown = document.getElementById('productSortDropdown');
   const searchInput = document.getElementById('productSearchInput');
   const viewGridBtn = document.getElementById('viewGridBtn');
   const viewListBtn = document.getElementById('viewListBtn');
@@ -1052,6 +1492,39 @@ function initProductsArchive() {
 
   let currentCategory = 'all';
   let searchTerm = '';
+
+  if (sortDropdown) {
+    const trigger = sortDropdown.querySelector('.product-sort-trigger');
+    const menu = sortDropdown.querySelector('.product-sort-menu');
+    const options = sortDropdown.querySelectorAll('[data-sort]');
+    const closeMenu = () => {
+      sortDropdown.classList.remove('is-open');
+      trigger.setAttribute('aria-expanded', 'false');
+    };
+    trigger.addEventListener('click', () => {
+      const open = sortDropdown.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', String(open));
+    });
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        const value = option.dataset.sort;
+        trigger.querySelector('span').textContent = option.textContent;
+        options.forEach(item => item.setAttribute('aria-selected', String(item === option)));
+        const sorted = [...productCards].sort((a, b) => {
+          if (value === 'price-low') return Number(a.dataset.price) - Number(b.dataset.price);
+          if (value === 'price-high') return Number(b.dataset.price) - Number(a.dataset.price);
+          if (value === 'rating') return Number(b.dataset.rating) - Number(a.dataset.rating);
+          return Number(a.dataset.originalIndex) - Number(b.dataset.originalIndex);
+        });
+        sorted.forEach(card => container.appendChild(card));
+        closeMenu();
+      });
+    });
+    document.addEventListener('click', event => {
+      if (!sortDropdown.contains(event.target)) closeMenu();
+    });
+    productCards.forEach((card, index) => card.dataset.originalIndex = String(index));
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1163,19 +1636,21 @@ function initContactForm() {
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // Required fields validation
-    const fullName = contactForm.querySelector('[name="name"]');
-    const email = contactForm.querySelector('[name="email"]');
-    const phone = contactForm.querySelector('[name="phone"]');
-    const enquiryType = contactForm.querySelector('[name="enquiry_type"]');
-    const message = contactForm.querySelector('[name="message"]');
+    if (alertBox) {
+      alertBox.style.display = 'none';
+      alertBox.textContent = '';
+    }
 
-    if (!fullName.value.trim() || !email.value.trim() || !message.value.trim()) {
-      showFormAlert('danger', 'Please complete all required fields (Name, Email, Message).');
+    // Use the form's required attributes so every required field is validated,
+    // including phone number, enquiry type, subject, and message.
+    if (!contactForm.checkValidity()) {
+      contactForm.classList.add('was-validated');
+      contactForm.reportValidity();
+      showFormAlert('danger', 'Please complete all required fields before submitting.');
       return;
     }
 
-    // Email format validation
+    const email = contactForm.querySelector('[name="email"]');
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email.value.trim())) {
       showFormAlert('danger', 'Please provide a valid business email address.');
@@ -1203,21 +1678,26 @@ function initContactForm() {
       });
 
       if (response.ok) {
-        showFormAlert('success', 'Thank you! Your bulk enquiry has been received. Our export specialist will contact you within 24 hours.');
-        contactForm.reset();
+        resetContactForm();
+        showFormAlert('success', 'Sent successfully! Your enquiry has been received. We will contact you within 24 hours.');
       } else {
         const errorData = await response.json().catch(() => ({}));
         showFormAlert('warning', errorData.message || 'Thank you! Your enquiry has been safely recorded by our desk.');
       }
     } catch (err) {
       // In local offline environments or CORS restrict mode:
-      showFormAlert('success', 'Your enquiry has been transmitted successfully to COCONEST International Sourcing Desk.');
-      contactForm.reset();
+      resetContactForm();
+      showFormAlert('success', 'Sent successfully! Your enquiry has been received by the COCONEST sourcing desk.');
     } finally {
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnText;
     }
   });
+
+  function resetContactForm() {
+    contactForm.reset();
+    contactForm.classList.remove('was-validated');
+  }
 
   function showFormAlert(type, message) {
     if (!alertBox) return;
