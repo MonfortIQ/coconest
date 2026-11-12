@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
-<body>
+<body class="blog-page">
 
   <!-- Top Announcement Bar -->
   <div class="top-bar">
@@ -124,12 +124,12 @@
   <!-- Featured Post Spotlight -->
   <section class="py-5">
     <div class="container">
-      <div class="p-4 p-md-5 bg-card border rounded-4 shadow-sm mb-5">
+      <div class="p-4 p-md-5 bg-card border rounded-4 shadow-sm mb-5 blog-featured-spotlight">
         <div class="row align-items-center g-4">
           <div class="col-lg-6">
             <span class="badge badge-gold mb-2">Featured Editorial Investigation</span>
             <h2 class="display-5 font-serif fw-bold mb-3">
-              <a href="blog-virgin-coconut-oil-benefits.html" class="text-heading">10 Proven Health & Beauty Benefits of Raw Virgin Coconut Oil</a>
+              <a href="blog-virgin-coconut-oil-benefits.html" class="text-heading">Ten Proven Health &amp; Beauty Benefits of Raw Virgin Coconut Oil</a>
             </h2>
             <p class="text-muted mb-4">From stimulating cellular ketone metabolism with high concentrations of Lauric Acid to restoring dry skin barriers, explore what clinical trials reveal about pure, unrefined virgin oil.</p>
             <div class="d-flex align-items-center gap-3 mb-4">
@@ -152,24 +152,26 @@
       <!-- Category Filter Pills & Search -->
       <div class="row align-items-center g-3 mb-4 pb-3 border-bottom blog-filter-toolbar">
         <div class="col-md-8">
-          <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-sm btn-coconest btn-primary-coconest active">All Topics</button>
-            <button class="btn btn-sm btn-coconest btn-outline-coconest">Wellness & Skin</button>
-            <button class="btn btn-sm btn-coconest btn-outline-coconest">Cold Extraction</button>
-            <button class="btn btn-sm btn-coconest btn-outline-coconest">Culinary & Recipes</button>
-            <button class="btn btn-sm btn-coconest btn-outline-coconest">Agroforestry</button>
+          <div class="d-flex flex-wrap gap-2 blog-topic-filters" role="group" aria-label="Filter blog topics">
+            <button type="button" class="btn btn-sm btn-coconest btn-primary-coconest active" data-filter="all" aria-pressed="true">All Topics</button>
+            <button type="button" class="btn btn-sm btn-coconest btn-outline-coconest" data-filter="wellness" aria-pressed="false">Wellness &amp; Skin</button>
+            <button type="button" class="btn btn-sm btn-coconest btn-outline-coconest" data-filter="extraction" aria-pressed="false">Cold Extraction</button>
+            <button type="button" class="btn btn-sm btn-coconest btn-outline-coconest" data-filter="culinary" aria-pressed="false">Culinary &amp; Recipes</button>
+            <button type="button" class="btn btn-sm btn-coconest btn-outline-coconest" data-filter="agroforestry" aria-pressed="false">Agroforestry</button>
           </div>
         </div>
         <div class="col-md-4">
           <div class="input-group input-group-sm">
-            <span class="input-group-text bg-card"><i class="fa-solid fa-magnifying-glass"></i></span>
-            <input type="text" class="form-control form-control-coconest" placeholder="Search articles...">
+            <span class="input-group-text bg-card blog-search-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+            </span>
+            <input type="search" id="blogSearchInput" class="form-control form-control-coconest" placeholder="Search articles..." aria-label="Search articles">
           </div>
         </div>
       </div>
 
       <!-- Articles Grid (Every card opens its own distinct HTML article!) -->
-      <div class="row g-4">
+      <div class="row g-4 blog-articles-grid">
         
         <!-- Article 1: Traditional Extraction -->
         <div class="col-md-6 col-lg-4">
@@ -283,7 +285,7 @@
                 <span><i class="fa-regular fa-calendar me-1"></i> Sep 20, 2026</span>
                 <span><i class="fa-regular fa-clock me-1"></i> 7 min read</span>
               </div>
-              <h4 class="blog-title"><a href="blog-healthy-recipes.html">5 Chef Superfood Bowls Featuring Crispy Coconut Chips</a></h4>
+              <h4 class="blog-title"><a href="blog-healthy-recipes.html">Five Chef Superfood Bowls Featuring Crispy Coconut Chips</a></h4>
               <p class="text-muted small">Artisan breakfast bowls curated with wild tropical fruits, raw honey, and our golden toasted sea salt coconut chips.</p>
               <div class="blog-footer">
                 <div class="author-pill">

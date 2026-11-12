@@ -275,14 +275,18 @@ document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   initRTL();
   initSimplePrimaryNav();
+  initHomeDropdown();
   initRemovedSourcingStoryLinks();
   initRemovedPricingDropdownItem();
   initNavHighlight();
+  initMobileNavDrawerHeader();
   initMobileNavDropdowns();
   initHomeNavLabels();
   initPageHeroSystem();
+  initPageFaq();
   initServiceImageSystem();
   initBlogStoryNavigationCleanup();
+  initBlogFilters();
   initPremiumFooter();
   initDefaultSocialLinks();
   initStickyNav();
@@ -293,15 +297,24 @@ document.addEventListener('DOMContentLoaded', () => {
   initCentrifugeGalleryAutoplay();
   initSearch();
   initContactForm();
+  initFormValidation();
   initCountdown();
   initEditorialMotion();
   initPremiumMotion();
-  initBackToTop();
 });
 
 function initSpecialPageNavbar() {
   const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  if (!['404.html', 'coming-soon.html', 'maintenance.html'].includes(page)) return;
+  const sharedNavbarPages = [
+    '404.html',
+    'coming-soon.html',
+    'maintenance.html',
+    'terms.html',
+    'privacy.html',
+    'cookies.html',
+    'returns.html'
+  ];
+  if (!sharedNavbarPages.includes(page)) return;
 
   const header = document.querySelector('header.navbar-coconest');
   if (!header) return;
@@ -385,6 +398,69 @@ function initBlogStoryNavigationCleanup() {
     const hasStoryNavigation = text.includes('previous') && (text.includes('next') || text.includes('featured story'));
     if (hasStoryNavigation) row.remove();
   });
+}
+
+function initBlogFilters() {
+  const toolbar = document.querySelector('.blog-filter-toolbar');
+  const grid = document.querySelector('.blog-articles-grid');
+  if (!toolbar || !grid) return;
+
+  const buttons = Array.from(toolbar.querySelectorAll('[data-filter]'));
+  const searchInput = toolbar.querySelector('#blogSearchInput');
+  const cards = Array.from(grid.children).filter(card => card.querySelector('.blog-card'));
+  if (!buttons.length || !cards.length) return;
+
+  const emptyState = document.createElement('p');
+  emptyState.className = 'blog-filter-empty text-muted text-center py-4 mb-0';
+  emptyState.textContent = 'No articles match your search.';
+  emptyState.hidden = true;
+  grid.after(emptyState);
+
+  const categoryMatches = {
+    wellness: /wellness|skin|beauty|purity/i,
+    extraction: /extraction|cold|press/i,
+    culinary: /culinary|recipe|chef|bowl|chips/i,
+    agroforestry: /agroforestry|sustainability|farming|ecosystem/i
+  };
+  let activeFilter = 'all';
+  let searchTerm = '';
+
+  const applyFilters = () => {
+    let visibleCount = 0;
+    cards.forEach(card => {
+      const content = card.textContent.replace(/\s+/g, ' ').trim();
+      const category = card.querySelector('.blog-category-tag')?.textContent || '';
+      const categoryText = `${category} ${content}`;
+      const matchesCategory = activeFilter === 'all' || categoryMatches[activeFilter]?.test(categoryText);
+      const matchesSearch = !searchTerm || content.toLowerCase().includes(searchTerm);
+      const isVisible = matchesCategory && matchesSearch;
+      card.hidden = !isVisible;
+      if (isVisible) visibleCount += 1;
+    });
+    emptyState.hidden = visibleCount > 0;
+
+    buttons.forEach(button => {
+      const isActive = button.dataset.filter === activeFilter;
+      button.classList.toggle('active', isActive);
+      button.classList.toggle('btn-primary-coconest', isActive);
+      button.classList.toggle('btn-outline-coconest', !isActive);
+      button.setAttribute('aria-pressed', String(isActive));
+    });
+  };
+
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      activeFilter = button.dataset.filter || 'all';
+      applyFilters();
+    });
+  });
+
+  searchInput?.addEventListener('input', event => {
+    searchTerm = event.target.value.trim().toLowerCase();
+    applyFilters();
+  });
+
+  applyFilters();
 }
 
 /* Remove the retired sourcing-story page from every shared view. */
@@ -495,6 +571,39 @@ function initSimplePrimaryNav() {
   });
 }
 
+function initHomeDropdown() {
+  document.querySelectorAll('.navbar-nav').forEach(nav => {
+    const homeItem = Array.from(nav.children).find(item => {
+      const link = item.querySelector(':scope > .nav-link');
+      const href = (link?.getAttribute('href') || '').toLowerCase().split('#')[0];
+      const label = link?.textContent.replace(/\s+/g, ' ').trim().toLowerCase();
+      return href === 'index.html' || href === 'index-2.html' || label === 'home' || label === 'the coconut market';
+    });
+    if (!homeItem) return;
+
+    const homeLink = homeItem.querySelector(':scope > .nav-link');
+    if (!homeLink) return;
+
+    homeItem.classList.add('dropdown');
+    homeLink.classList.add('dropdown-toggle');
+    homeLink.setAttribute('href', '#');
+    homeLink.setAttribute('role', 'button');
+    homeLink.setAttribute('data-bs-toggle', 'dropdown');
+    homeLink.setAttribute('aria-expanded', 'false');
+    homeLink.textContent = 'Home';
+
+    let menu = homeItem.querySelector(':scope > .dropdown-menu');
+    if (!menu) {
+      menu = document.createElement('ul');
+      menu.className = 'dropdown-menu';
+      menu.innerHTML = `
+        <li><a class="dropdown-item" href="index.html"><i class="fa-solid fa-store text-gold"></i> Home 1 - The Coconut Market</a></li>
+        <li><a class="dropdown-item" href="index-2.html"><i class="fa-solid fa-feather text-gold"></i> Home 2 - The Grove Edit</a></li>`;
+      homeItem.appendChild(menu);
+    }
+  });
+}
+
 function initNavHighlight() {
   const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   let activeLabel = 'home';
@@ -554,6 +663,36 @@ function initMobileNavDropdowns() {
       const isOpen = parent.classList.toggle('show');
       menu.classList.toggle('show', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+}
+
+function initMobileNavDrawerHeader() {
+  document.querySelectorAll('.navbar-coconest .navbar-collapse').forEach(collapse => {
+    if (collapse.querySelector('.mobile-drawer-header')) return;
+
+    const logoSource = document.documentElement.getAttribute('data-theme') === 'dark'
+      ? 'assets/images/branding/logo-light.svg'
+      : 'assets/images/branding/logo.svg';
+    const drawerHeader = document.createElement('div');
+    drawerHeader.className = 'mobile-drawer-header';
+    drawerHeader.innerHTML = `
+      <a class="mobile-drawer-brand" href="index.html" aria-label="COCONEST home">
+        <img src="${logoSource}" alt="COCONEST Pure Coconut Living">
+      </a>
+      <button class="mobile-drawer-close" type="button" aria-label="Close navigation menu">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>`;
+    collapse.prepend(drawerHeader);
+
+    drawerHeader.querySelector('.mobile-drawer-close')?.addEventListener('click', () => {
+      if (window.bootstrap?.Collapse) {
+        window.bootstrap.Collapse.getOrCreateInstance(collapse, { toggle: false }).hide();
+      } else {
+        collapse.classList.remove('show');
+        collapse.closest('.navbar-coconest')?.classList.remove('menu-open');
+      }
+      collapse.closest('.navbar-coconest')?.querySelector('.navbar-toggler')?.setAttribute('aria-expanded', 'false');
     });
   });
 }
@@ -671,8 +810,14 @@ function renderPremiumPageHero(hero, config, page) {
     ? 'premium-product-hero-image'
     : page === 'pricing.html'
       ? 'premium-pricing-hero-image'
-      : page === 'contact.html' ? 'premium-contact-hero-image' : '';
-  art.innerHTML = `<div class="premium-page-hero-frame"><img class="${heroImageClass}" src="${config.image}" alt="${config.alt}" loading="eager"><span class="premium-page-hero-stamp">COCONEST<br><small>PURE LIVING</small></span></div>`;
+      : page === 'contact.html'
+        ? 'premium-contact-hero-image'
+        : page === 'about.html'
+          ? 'premium-about-hero-image'
+          : page === 'blog.html'
+            ? 'premium-blog-hero-image'
+          : page === 'service-bulk-oil.html' ? 'premium-service-bulk-oil-image' : '';
+  art.innerHTML = `<div class="premium-page-hero-frame"><img class="${heroImageClass}" src="${config.image}" alt="${config.alt}" loading="eager"></div>`;
   grid.append(copy, art);
   container.classList.remove('text-center');
   container.replaceChildren(grid);
@@ -749,10 +894,144 @@ function initPremiumFooter() {
 
   footers.slice(1).forEach(footer => footer.remove());
   const footer = footers[0];
-  footer.outerHTML = premiumFooterMarkup();
-  document.querySelector('.premium-footer')?.insertAdjacentHTML('beforebegin', premiumNewsletterMarkup());
+  // Mount both shared components in a fresh direct child of <body>. This
+  // prevents legacy page wrappers from clipping or hiding the footer content.
+  const mount = document.createElement('div');
+  mount.className = 'premium-footer-mount';
+  document.body.appendChild(mount);
+  footer.remove();
+  mount.innerHTML = `${premiumNewsletterMarkup()}${premiumFooterMarkup()}`;
   bindPremiumNewsletterForms();
   initPremiumFooterAccordions();
+}
+
+const COCONEST_PAGE_FAQS = {
+  'index.html': [
+    ['What makes COCONEST coconut products different?', 'Our products are made from carefully selected coconuts, cold-processed where applicable, and prepared without unnecessary bleaching, deodorizing, or artificial additives.'],
+    ['How quickly are coconuts processed after harvest?', 'Our virgin coconut oil is processed within a controlled short harvest-to-press window to protect aroma, freshness, and naturally occurring nutrients.'],
+    ['Do you ship internationally?', 'Yes. We support domestic and international orders, with export documentation and wholesale logistics available for qualified business customers.']
+  ],
+  'index-2.html': [
+    ['Where are COCONEST products sourced?', 'Our coconut products are sourced through trusted Sri Lankan growing communities and selected for traceability, quality, and responsible cultivation.'],
+    ['What does cold centrifugation protect?', 'Cold centrifugation separates the oil gently and helps preserve its clean aroma, crystalline clarity, and naturally occurring fatty-acid profile.'],
+    ['Can I request a sample or wholesale discussion?', 'Yes. Use the contact form to request a sample conversation, product specifications, or a tailored wholesale quotation.']
+  ],
+  'about.html': [
+    ['What is the COCONEST philosophy?', 'We combine careful sourcing, gentle processing, transparent partnerships, and practical sustainability to bring natural coconut products into everyday life.'],
+    ['How do you support farming communities?', 'We work with trusted growers and prioritize long-term relationships, responsible purchasing, and clear traceability from grove to finished product.'],
+    ['Are your products suitable for everyday use?', 'Our range includes culinary, wellness, ingredient, and business formats so customers can choose the product that best fits their routine or application.']
+  ],
+  'products.html': [
+    ['Are the products organic and non-GMO?', 'Our range is selected from certified or verified supply streams, with product-specific details shown on each product page and batch documentation available for business orders.'],
+    ['How should coconut oil be stored?', 'Keep coconut oil sealed in a cool, dry place away from direct sunlight. Natural changes in texture with temperature are normal.'],
+    ['Can I order products for wholesale?', 'Yes. Contact us for bulk pricing, larger pack formats, product specifications, and export support.']
+  ],
+  'services.html': [
+    ['Which business services does COCONEST provide?', 'We support wholesale supply, bulk oil, private-label manufacturing, retail distribution, export logistics, packaging, formulation, quality assurance, and business consulting.'],
+    ['Can you support private-label products?', 'Yes. Our team can help with product direction, packaging selection, formulation coordination, documentation, and practical launch preparation.'],
+    ['How do I request a business quotation?', 'Send your company details, product requirements, estimated volume, and destination through the contact page, and our team will prepare the next steps.']
+  ],
+  'pricing.html': [
+    ['How is wholesale pricing calculated?', 'Pricing depends on product, pack format, volume, destination, documentation, and shipping terms. We prepare quotations around your actual requirements.'],
+    ['What minimum order quantities are available?', 'Minimum quantities vary by product and format. The relevant product or service page provides the starting guidance for each range.'],
+    ['Can you quote shipping and export costs?', 'Yes. Share your destination and preferred delivery terms so we can include the appropriate freight and documentation considerations.']
+  ],
+  'contact.html': [
+    ['How soon will the team reply?', 'Our sourcing and customer desk aims to review enquiries and reply within one business day, with detailed business quotations typically following within 24 business hours.'],
+    ['What information should I include in an enquiry?', 'Include your name, company, product category, estimated volume, destination, and any packaging or documentation requirements.'],
+    ['Can I request product samples?', 'Yes. Mention the products and intended use in your enquiry so the team can confirm suitable sample and shipping options.']
+  ],
+  'blog.html': [
+    ['What topics are covered in the COCONEST journal?', 'The journal covers coconut oil science, extraction, culinary uses, regenerative growing, sustainability, packaging, and practical natural-living ideas.'],
+    ['Are the articles written for consumers or businesses?', 'Both. Articles explain the fundamentals clearly while including useful context for chefs, formulators, retailers, and procurement teams.'],
+    ['Can I suggest a topic?', 'Yes. Send your suggestion through the contact page and tell us what question or application you would like the journal to explore.']
+  ],
+  'sourcing-story.html': [
+    ['How is a COCONEST batch traced?', 'Batch information is connected to our sourcing, processing, testing, and packaging workflow so the product journey can be reviewed from grove to shipment.'],
+    ['Do you use regenerative practices?', 'We work with growing systems that support biodiversity, soil health, responsible water use, and long-term productivity rather than relying on monoculture alone.'],
+    ['Can businesses visit or audit the supply chain?', 'For qualified business partnerships, audit, documentation, and sourcing discussions can be arranged with advance coordination.']
+  ],
+  'service-wholesale.html': [
+    ['What wholesale formats are available?', 'Wholesale formats can include retail-ready packs, food-service quantities, and larger ingredient shipments depending on the product and intended use.'],
+    ['Can you provide batch documentation?', 'Yes. Product-specific certificates and supporting documentation can be discussed with the quotation.'],
+    ['Who is wholesale supply intended for?', 'We work with food manufacturers, bakeries, retailers, hospitality groups, wellness brands, and other qualified business buyers.']
+  ],
+  'service-private-label.html': [
+    ['What does private-label support include?', 'Support may include product selection, formulation coordination, packaging direction, labeling requirements, production planning, and launch preparation.'],
+    ['Can you help with small initial runs?', 'Available run sizes depend on the product and packaging format. Share your target quantity so the team can recommend a practical starting route.'],
+    ['How long does a private-label project take?', 'Timing depends on formulation, packaging, approvals, and production capacity. A project schedule is prepared after the initial brief.']
+  ],
+  'service-retail-distribution.html': [
+    ['Which retail partners are a good fit?', 'Our range is designed for specialty grocery, organic retail, wellness, premium food, and conscious lifestyle channels.'],
+    ['Do you provide retail-ready materials?', 'We can discuss product information, pack formats, wholesale details, and brand materials appropriate for your channel.'],
+    ['Can you support regional distribution?', 'Yes. Share your territory, expected volumes, and channel plan so we can review distribution possibilities.']
+  ],
+  'service-export.html': [
+    ['Which countries can you ship to?', 'We support export enquiries to approved destinations, subject to product requirements, documentation, freight availability, and local import rules.'],
+    ['What export documents are available?', 'Depending on the product and destination, documentation can include certificates of analysis, origin documents, phytosanitary support, and commercial shipping paperwork.'],
+    ['Which shipping terms can you quote?', 'FOB, CIF, DDP, and other practical terms can be reviewed based on destination, shipment size, and importer requirements.']
+  ],
+  'service-packaging.html': [
+    ['What packaging options can you support?', 'Options may include glass, secondary cartons, compostable formats, labels, and other product-specific packaging solutions.'],
+    ['Can packaging be customized to our brand?', 'Yes. We can discuss materials, finishes, labeling, sustainability goals, and the production requirements for your brand system.'],
+    ['How do we begin a packaging project?', 'Send your product type, pack size, target quantity, artwork status, and sustainability requirements for an initial review.']
+  ],
+  'service-details.html': [
+    ['Can COCONEST manage a project from brief to shipment?', 'Yes. We can coordinate sourcing, product direction, packaging, quality documentation, and shipment planning around the agreed project scope.'],
+    ['Do you work with new brands?', 'Yes. We support both established buyers and emerging brands that need a reliable coconut product partner.'],
+    ['How do we start a partnership discussion?', 'Contact the team with your intended product, market, volume, and timeline so we can recommend the most suitable next step.']
+  ]
+};
+
+function initPageFaq() {
+  const page = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const genericFaqs = [
+    ['Where can I find more information about this page?', 'The page content above explains the relevant product, service, story, or ordering information. Contact COCONEST if you need a tailored answer.'],
+    ['Can I request help choosing the right option?', 'Yes. Share your intended use, preferred format, estimated quantity, and destination so our team can recommend the most suitable option.'],
+    ['How do I contact COCONEST?', 'Use the Contact Us page to send your question or enquiry. Our team will review the details and reply with the appropriate next steps.']
+  ];
+  const faqs = COCONEST_PAGE_FAQS[page]
+    || (/^product(?:-|s)/.test(page) ? [
+      ['Which product is right for my intended use?', 'Choose based on application, pack size, processing style, and quantity. Contact us if you need help comparing products.'],
+      ['Are product specifications available?', 'Yes. Product pages include key details, and additional batch or wholesale documentation can be requested from the team.'],
+      ['Can I add this product to my basket?', 'Available retail products can be added to the basket and continued through the demo checkout flow.']
+    ] : /^blog(?:-|$)/.test(page) ? [
+      ['What is this article about?', 'This article explains a practical aspect of coconut sourcing, processing, nutrition, culinary use, or sustainability in an accessible format.'],
+      ['Are the claims supported by product information?', 'The journal is intended for education and product context. Contact COCONEST for batch-specific or technical documentation.'],
+      ['Can I discuss this topic with the team?', 'Yes. Send your question through Contact Us and include the article topic so the correct team member can respond.']
+    ] : /^service(?:-|s)/.test(page) ? [
+      ['What does this service include?', 'The service description outlines the standard scope. Requirements, volumes, packaging, and documentation can be tailored during the enquiry.'],
+      ['Is this service available for international businesses?', 'International support depends on destination, product requirements, shipping, and local import conditions.'],
+      ['How do I request a quotation?', 'Use the enquiry button or Contact Us page and include your business, volume, destination, and timing details.']
+    ] : genericFaqs);
+  const footer = document.querySelector('footer');
+  if (!faqs || !footer || document.querySelector('[data-coconest-faq]')) return;
+  if (document.querySelector('.accordion')) return;
+
+  const id = `coconestFaq-${page.replace(/[^a-z0-9]+/g, '-')}`;
+  const items = faqs.map(([question, answer], index) => `
+    <div class="accordion-item bg-transparent">
+      <h3 class="accordion-header">
+        <button class="accordion-button collapsed bg-transparent text-heading" type="button" data-bs-toggle="collapse" data-bs-target="#${id}-${index}" aria-expanded="false" aria-controls="${id}-${index}">
+          ${question}
+        </button>
+      </h3>
+      <div id="${id}-${index}" class="accordion-collapse collapse" data-bs-parent="#${id}">
+        <div class="accordion-body text-muted">${answer}</div>
+      </div>
+    </div>`).join('');
+
+  footer.insertAdjacentHTML('beforebegin', `
+    <section class="faq-section-coconest" data-coconest-faq aria-labelledby="${id}-title">
+      <div class="container">
+        <div class="faq-section-heading">
+          <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Helpful Answers</span>
+          <h2 id="${id}-title" class="section-title">Frequently Asked Questions</h2>
+          <p class="section-desc">Clear answers about our products, services, sourcing, and ordering process.</p>
+        </div>
+        <div class="accordion accordion-flush faq-list-coconest" id="${id}">${items}</div>
+      </div>
+    </section>`);
 }
 
 function premiumNewsletterMarkup() {
@@ -869,7 +1148,6 @@ function premiumFooterMarkup() {
           <span>© 2026 COCONEST. All Rights Reserved.</span>
           <span class="premium-footer-mantra">Pure Nature. Pure Goodness.</span>
           <nav aria-label="Legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a><a href="cookies.html">Cookie Policy</a></nav>
-          <button type="button" class="premium-footer-top back-to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
         </div>
       </div>
     </footer>`;
@@ -1707,6 +1985,89 @@ function initContactForm() {
   }
 }
 
+function initFormValidation() {
+  document.querySelectorAll('form').forEach(form => {
+    const fields = Array.from(form.querySelectorAll('input:not([type="hidden"]), select, textarea'));
+    if (!fields.length) return;
+    form.noValidate = true;
+
+    fields.forEach(field => {
+      const label = field.closest('.mb-3, .col-md-6, .col-12, .form-group')?.querySelector('label');
+      const labelText = label?.textContent.replace('*', '').replace('(optional)', '').trim() || field.name || field.id || 'value';
+
+      if (field.tagName === 'SELECT' && !/optional/i.test(label?.textContent || '')) {
+        field.required = true;
+        if (!field.querySelector('option[value=""]')) {
+          field.insertBefore(new Option(`Choose ${labelText.toLowerCase()}`, '', true, true), field.firstChild);
+        }
+      } else if (!field.placeholder && field.tagName !== 'SELECT') {
+        field.placeholder = `Enter ${labelText.toLowerCase()}`;
+      }
+
+      const update = () => {
+        if (field.classList.contains('is-invalid')) validateFormField(field, true);
+      };
+      field.addEventListener('blur', () => validateFormField(field, true));
+      field.addEventListener('change', update);
+      field.addEventListener('input', update);
+    });
+
+    form.addEventListener('submit', event => {
+      let firstInvalid = null;
+      fields.forEach(field => {
+        if (!validateFormField(field, true) && !firstInvalid) firstInvalid = field;
+      });
+      if (firstInvalid) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        firstInvalid.focus();
+      }
+    }, true);
+  });
+}
+
+function validateFormField(field, showMessage = false) {
+  const value = field.value.trim();
+  let message = '';
+
+  if (field.required && !value) {
+    message = field.tagName === 'SELECT' ? 'Please choose an option.' : 'This field is required.';
+  } else if (value && field.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
+    message = 'Please enter a valid email address.';
+  } else if (value && field.type === 'tel' && !/^[+()\d\s.-]{7,}$/.test(value)) {
+    message = 'Please enter a valid phone number.';
+  } else if (value && field.name === 'cardNumber' && value.replace(/\D/g, '').length < 12) {
+    message = 'Enter at least 12 card digits.';
+  } else if (value && field.name === 'expiry' && !/^((0[1-9])|(1[0-2]))\s*\/\s*\d{2}$/.test(value)) {
+    message = 'Use the MM / YY format.';
+  } else if (value && field.name === 'cvv' && !/^\d{3,4}$/.test(value)) {
+    message = 'Enter a 3 or 4 digit CVV.';
+  } else if (value && field.minLength > 0 && value.length < field.minLength) {
+    message = `Enter at least ${field.minLength} characters.`;
+  } else if (value && !field.checkValidity()) {
+    message = field.validationMessage || 'Please check this field.';
+  }
+
+  const wrapper = field.parentElement;
+  let error = wrapper?.querySelector('.form-field-error');
+  if (message && showMessage) {
+    if (!error) {
+      error = document.createElement('div');
+      error.className = 'form-field-error';
+      wrapper.appendChild(error);
+    }
+    error.textContent = message;
+    error.hidden = false;
+    field.classList.add('is-invalid');
+    field.setAttribute('aria-invalid', 'true');
+  } else if (!message) {
+    if (error) error.hidden = true;
+    field.classList.remove('is-invalid');
+    field.removeAttribute('aria-invalid');
+  }
+  return !message;
+}
+
 /* ===================================================================
    9. Countdown Timer (for coming-soon.html)
    =================================================================== */
@@ -1782,23 +2143,6 @@ function initEditorialMotion() {
     if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
     if (!img.getAttribute('decoding')) img.setAttribute('decoding', 'async');
   });
-}
-
-function initBackToTop() {
-  let button = document.querySelector('.back-to-top');
-  if (!button) {
-    button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'back-to-top';
-    button.setAttribute('aria-label', 'Back to top');
-    button.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
-    document.body.appendChild(button);
-  }
-
-  const syncVisibility = () => button.classList.toggle('is-visible', window.scrollY > 650);
-  window.addEventListener('scroll', syncVisibility, { passive: true });
-  syncVisibility();
-  button.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 }
 
 /* ===================================================================
